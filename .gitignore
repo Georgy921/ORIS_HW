@@ -1,0 +1,18 @@
+# Visual Studio
+.vs/
+bin/
+obj/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Node.js / Vite
+node_modules/
+dist/
+.vite/
+.cache/
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,149 @@
+[
+  {
+    "id": "popular",
+    "title": "Популярные фильтры",
+    "type": "checkbox",
+    "options": [
+      {
+        "value": "all-inclusive",
+        "label": "Все включено"
+      },
+      {
+        "value": "wi-fi",
+        "label": "Бесплатный Wi-Fi"
+      },
+      {
+        "value": "first-line",
+        "label": "1-я линия"
+      },
+      {
+        "value": "beach",
+        "label": "Пляжный отдых"
+      },
+      {
+        "value": "regular-flight",
+        "label": "Регулярный перелет"
+      }
+    ]
+  },
+  {
+    "id": "price",
+    "title": "Стоимость",
+    "type": "range",
+    "min": 0,
+    "max": 2000000,
+    "step": 10,
+    "currency": "₽"
+  },
+  {
+    "id": "search_bar",
+    "title": "Поиск отеля",
+    "type": "search_hotel",
+    "placeholder": "Название отеля"
+  },
+  {
+    "id": "region",
+    "title": "Регионы и курорты",
+    "type": "checkbox",
+    "options": [
+      {
+        "value": "antalya",
+        "label": "Анталья"
+      },
+      {
+        "value": "alanya",
+        "label": "Аланья"
+      },
+      {
+        "value": "kemer",
+        "label": "Кемер"
+      },
+      {
+        "value": "belek",
+        "label": "Белек"
+      },
+      {
+        "value": "bodrum",
+        "label": "Бодрум"
+      },
+      {
+        "value": "dalaman",
+        "label": "Даламан"
+      },
+      {
+        "value": "stambul",
+        "label": "Стамбул"
+      },
+      {
+        "value": "fethie",
+        "label": "Фетхие"
+      },
+      {
+        "value": "erzurum",
+        "label": "Эрзурум"
+      },
+      {
+        "value": "side",
+        "label": "Сиде"
+      }
+    ]
+  },
+  {
+    "id": "category_hotel",
+    "title": "Категория отеля",
+    "type": "checkbox",
+    "options": [
+      {
+        "value": "5",
+        "label": "5★"
+      },
+      {
+        "value": "4",
+        "label": "4★"
+      },
+      {
+        "value": "3",
+        "label": "3★"
+      },
+      {
+        "value": "2",
+        "label": "2★"
+      },
+      {
+        "value": "1",
+        "label": "1★"
+      }
+    ]
+  },
+  {
+    "id": "nutrition",
+    "title": "Питание",
+    "type": "checkbox",
+    "options": [
+      {
+        "value": "ultra_all",
+        "label": "Ультра все включено"
+      },
+      {
+        "value": "all",
+        "label": "Все включено"
+      },
+      {
+        "value": "breakfest",
+        "label": "Завтрак"
+      },
+      {
+        "value": "without_food",
+        "label": "Без питания"
+      },
+      {
+        "value": "pansion",
+        "label": "Полупансион"
+      },
+      {
+        "value": "full_pansion",
+        "label": "Полный пансион"
+      }
+    ]
+  }
+]

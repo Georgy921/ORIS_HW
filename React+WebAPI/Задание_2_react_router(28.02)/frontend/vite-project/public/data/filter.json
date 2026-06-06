@@ -1,0 +1,180 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-05-15",
+  
+  "searchFields": {
+    "from": {
+      "type": "string",
+      "label": "Откуда",
+      "placeholder": "Город вылета",
+      "required": false,
+      "suggestions": ["Москва", "Санкт-Петербург", "Казань", "Екатеринбург", "Новосибирск"]
+    },
+    "to": {
+      "type": "string", 
+      "label": "Куда",
+      "placeholder": "Страна или курорт",
+      "required": false,
+      "suggestions": ["Турция", "Египет", "Таиланд", "ОАЭ", "Россия"]
+    },
+    "date": {
+      "type": "date",
+      "label": "Дата вылета",
+      "placeholder": "ДД.ММ.ГГГГ",
+      "required": false,
+      "format": "DD.MM.YYYY"
+    },
+    "duration": {
+      "type": "string",
+      "label": "Длительность",
+      "placeholder": "Ночей",
+      "required": false,
+      "pattern": "^[0-9]+(-[0-9]+)?$",
+      "examples": ["7", "7-10", "14+"]
+    },
+    "people": {
+      "type": "string",
+      "label": "Кто едет",
+      "placeholder": "Взрослые, дети",
+      "required": false,
+      "pattern": "^[0-9]+(взр\\.?)?([,\\s]*[0-9]+(дет\\.?)?)*$"
+    }
+  },
+
+  "checkboxFilters": {
+    "Популярные фильтры": {
+      "type": "multi-select",
+      "collapsible": true,
+      "defaultExpanded": true,
+      "options": [
+        { "value": "all-inclusive", "label": "Все включено", "icon": "src/all_inclusive.png" },
+        { "value": "wi-fi", "label": "Бесплатный Wi-Fi", "icon": "src/wifi.png" },
+        { "value": "first-line", "label": "1-я береговая линия", "icon": "src/beach_line.png" },
+        { "value": "beach", "label": "Пляжный отдых", "icon": "src/beach.png" },
+        { "value": "regular-flight", "label": "Регулярный перелет", "icon": "src/plane.png" }
+      ]
+    },
+
+    "Регионы и курорты": {
+      "type": "multi-select",
+      "collapsible": true,
+      "defaultExpanded": true,
+      "options": [
+        { "value": "Аланья", "label": "Аланья", "count": 142 },
+        { "value": "Анталья", "label": "Анталья", "count": 287 },
+        { "value": "Белек", "label": "Белек", "count": 56 },
+        { "value": "Бодрум", "label": "Бодрум", "count": 34 },
+        { "value": "Даламан", "label": "Даламан", "count": 23 },
+        { "value": "Кемер", "label": "Кемер", "count": 98 },
+        { "value": "Сиде", "label": "Сиде", "count": 76 },
+        { "value": "Стамбул", "label": "Стамбул", "count": 45 },
+        { "value": "Фетхие", "label": "Фетхие", "count": 19 },
+        { "value": "Эрзурум", "label": "Эрзурум", "count": 8 }
+      ]
+    },
+
+    "Категория отеля": {
+      "type": "multi-select",
+      "collapsible": true,
+      "defaultExpanded": true,
+      "options": [
+        { "value": "5", "label": "5★", "count": 234 },
+        { "value": "4", "label": "4★", "count": 312 },
+        { "value": "3", "label": "3★", "count": 156 },
+        { "value": "2", "label": "2★", "count": 45 },
+        { "value": "1", "label": "Без звезд", "count": 23 }
+      ]
+    },
+
+    "Питание": {
+      "type": "multi-select",
+      "collapsible": true,
+      "defaultExpanded": true,
+      "options": [
+        { "value": "ultra_all", "label": "Ультра все включено", "count": 189 },
+        { "value": "all", "label": "Все включено", "count": 267 },
+        { "value": "full_pansion", "label": "Полный пансион", "count": 78 },
+        { "value": "pansion", "label": "Полупансион", "count": 56 },
+        { "value": "breakfest", "label": "Завтрак", "count": 134 },
+        { "value": "without_food", "label": "Без питания", "count": 34 }
+      ]
+    }
+  },
+
+  "rangeFilters": {
+    "price": {
+      "type": "range",
+      "label": "Стоимость",
+      "unit": "₽",
+      "min": 0,
+      "max": 2000000,
+      "step": 1000,
+      "defaultMin": 0,
+      "defaultMax": 2000000,
+      "format": "currency",
+      "locale": "ru-RU"
+    }
+  },
+
+  "textFilters": {
+    "hotel_search": {
+      "type": "text",
+      "label": "Поиск отеля",
+      "placeholder": "Название отеля",
+      "maxLength": 100,
+      "debounceMs": 300
+    }
+  },
+
+  "sortOptions": [
+    { "value": "price_asc", "label": "Сначала дешёвые" },
+    { "value": "price_desc", "label": "Сначала дорогие" },
+    { "value": "rating_desc", "label": "По рейтингу" },
+    { "value": "popularity", "label": "По популярности" },
+    { "value": "departure_date", "label": "По дате вылета" }
+  ],
+
+  "api": {
+    "endpoint": "/tours/filters",
+    "method": "POST",
+    "contentType": "application/json",
+    "requestSchema": {
+      "search": {
+        "from": "string?",
+        "to": "string?",
+        "date": "string?",
+        "duration": "string?",
+        "people": "string?"
+      },
+      "filters": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "price": {
+        "min": "number",
+        "max": "number"
+      },
+      "hotel_search": "string?",
+      "sort": "string?"
+    },
+    "responseSchema": {
+      "success": "boolean",
+      "tours": "array",
+      "totalCount": "number",
+      "appliedFilters": "object",
+      "message": "string?"
+    }
+  },
+
+  "ui": {
+    "debounceDelay": 300,
+    "maxVisibleOptions": 10,
+    "showCounts": true,
+    "allowMultipleSelection": true,
+    "resetButtonText": "Сбросить фильтры",
+    "applyButtonText": "Показать туры"
+  }
+}

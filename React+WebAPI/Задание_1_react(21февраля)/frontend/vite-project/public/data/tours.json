@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "TUI MAGIC LIFE Jacaranda",
+    "arrival_city": "Аланья",
+    "departure_city": "Казань",
+    "departure_date": "5 мар.",
+    "nights_count": 7,
+    "adults_count": 5,
+    "tour_price": 124320.00,
+    "image_url": "https://apigate-tui.fstravel.com/api/geocontent/static/s600/Hotel/00180000-ac11-0242-de3e-08d9938a7c4c/MainPhoto-Source-lg0gepge.jpg",
+    "bonus": 2486,
+    "wifi": "Wi-Fi в общественных местах (бесплатно)",
+    "distance_to_airport": 50,
+    "general_description": "Курортный отель через дорогу от пляжа. Отлично подходит для семейного отдыха. Предлагает своим гостям разнообразное питание и большой выбор развлечений. На территории есть несколько бассейнов, водные горки, работают детский клуб и SPA-салон.",
+    "has_kids_club": true,
+    "hotel_name": "TUI MAgis",
+    "has_aquapark": true,
+    "has_spa": true,
+    "room_type": "Апартаменты",
+    "popular_filters": "all-inclusive",
+    "region": "Турция",
+    "rating": 5,
+    "meal_plan": "ultra-all"
+  }
+]
