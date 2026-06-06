@@ -11,3 +11,6 @@ cd ToursApi
 dotnet build
 dotnet ef migrations add InitialCreate
 dotnet run
+
+
+чтобы добавить туры в базу данных есть файл туры.txt нужно исполнить их в sql server managment studio
